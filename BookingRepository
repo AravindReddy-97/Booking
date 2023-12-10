@@ -1,0 +1,18 @@
+package edu.learn.assignment.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import edu.learn.assignment.model.Booking;
+import edu.learn.assignment.model.Movie;
+import edu.learn.assignment.model.User;
+
+import java.util.List;
+
+
+@Repository
+public interface BookingRepository extends JpaRepository<Booking, Integer> {
+
+	List<Booking> findByUserId(int userId);
+	
+}
